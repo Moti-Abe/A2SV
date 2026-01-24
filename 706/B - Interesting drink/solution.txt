@@ -1,0 +1,1 @@
+import bisect n = int(input())prices = list(map(int, input().split()))prices.sort()   # sort prices q = int(input())for _ in range(q):    m = int(input())    # count of prices <= m    print(bisect.bisect_right(prices, m))
