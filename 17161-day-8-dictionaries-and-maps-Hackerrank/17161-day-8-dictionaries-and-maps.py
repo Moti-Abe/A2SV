@@ -4,7 +4,7 @@ n = int(input())
 mp ={}
 
 for i in range(n):
-    key, value = input().rsplit(" ",1)
+    key, value = input().rsplit()
     value = int(value)
     mp[key] = (value)
     
