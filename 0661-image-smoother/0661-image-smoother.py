@@ -1,21 +1,18 @@
-from typing import List
-
 class Solution:
     def imageSmoother(self, img: List[List[int]]) -> List[List[int]]:
-        m, n = len(img), len(img[0])
-        res = [[0] * n for _ in range(m)]
-        
-        for i in range(m):
-            for j in range(n):
-                total = 0
-                count = 0
-                
-                for x in range(i - 1, i + 2):
-                    for y in range(j - 1, j + 2):
-                        if 0 <= x < m and 0 <= y < n:
-                            total += img[x][y]
-                            count += 1
-                            
-                res[i][j] = total // count
+        rows , cols = len(img), len(img[0])
+        res = [[0]*cols for _ in range(rows)]
+
+        for r in range(rows):
+            for c in range(cols):
+                total , count = 0 , 0 
+                for i in range (r-1, r+2):
+                    for j in range (c-1, c+2):
+                        if i < 0 or j < 0 or i == rows or j == cols:
+                            continue
+                        total += img[i][j]
+                        count += 1
+                res[r][c] = total//count
         
         return res
+        
