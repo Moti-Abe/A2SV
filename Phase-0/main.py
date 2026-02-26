@@ -1,4 +1,3 @@
-queries = [[0,2],[1,4]]
-
-for ball, color in queries:
-    print(ball,color)
+nums = [1,2,1,3]
+nums.remove(1)
+print(nums)
