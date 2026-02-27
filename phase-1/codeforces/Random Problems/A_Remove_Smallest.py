@@ -9,6 +9,7 @@ while t > 0:
         if abs(arr[i+1] - arr[i]) > 1:
             ispossible = False
             break
+        
     if ispossible:
         print("YES")
     else:
