@@ -7,5 +7,4 @@ while t > 0:
     if tower_len > n:
         print(1)
     else:
-        
         print(math.ceil(n/tower_len))
