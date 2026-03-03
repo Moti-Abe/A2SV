@@ -5,10 +5,9 @@ class Solution:
         isSorted = True
         while right < len(arr):
             if arr[left] > arr[right]:
-                isSorted = False
-                break
+                return False 
             left += 1
             right += 1
         
-        return isSorted
+        return True
                 
