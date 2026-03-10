@@ -8,9 +8,6 @@ while t > 0:
         ind_a = s.index("A")
         ind_b = s.rindex("B")
         max_swap = (ind_b - ind_a)
-        if max_swap >= 0:
-            print(max_swap)
-        else:
-            print(0)
+        print(max(0, max_swap))
     else:
         print(0)
