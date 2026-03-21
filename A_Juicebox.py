@@ -1,24 +1,56 @@
+import sys
+input = sys.stdin.readline
+
 t = int(input())
 
-while t > 0:
-    t -= 1
-    n,k = map(int, input().split())
-
-    output = {}
-    res = 0
-    for i in range(k):
-        b, c = map(int, input().split())
-        output[b] = output.get(b, 0) + c
-    sorted_output = dict(sorted(output.items(), key=lambda x:x[1], reverse=True))
-
+for _ in range(t):
+    n, k = map(int, input().split())
     
-    
-    count = 0
-    for key, value in sorted_output.items():
-        res += value
-        count += 1
-        if count == n:
-            break
-    
-    print(res)
+    arr = []
+    for _ in range(k):
+        brand, cost = map(int, input().split())
+        arr.append((brand,cost))
 
+    arr.sort()
+    brandMap = {}
+    for brand, cost in arr:
+        brandMap[brand] = brandMap.get(brand, 0) + cost
+    
+    values = sorted(brandMap.values(), reverse=True)
+    
+    if len(values) < n:
+        print(sum(values))
+    else:
+        print(sum(values[0:n]))
+    
+
+# import sys 
+# from collections import Counter
+
+# input = sys.stdin.readline
+
+# t = int(input())
+# output = []
+# for _ in range(t):
+#     n, k = map(int, input().split())
+#     arr = []
+#     for _ in range(k):
+#         b, c = map(int, input().split())
+#         arr.append((b, c))
+        
+#     arr.sort()
+#     counter = Counter()
+#     for b, c in arr:
+#         counter[b] += c
+        
+#     vals = sorted(counter.values(), reverse=True)
+    
+#     max_amount = 0
+#     min_len = min(n, len(vals))
+#     for i in range(min_len):
+#         max_amount += vals[i]
+        
+#     output.append(str(max_amount))
+    
+# print('\n'.join(output))
+    
