@@ -10,10 +10,10 @@ class DataStream:
             self.count += 1
         else:
             self.count = 0
-        if self.k != self.count:
-            return False
-        else:
+        if self.count >= self.k:
             return True
+        else:
+            return False
 
 
         
