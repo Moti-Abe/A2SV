@@ -56,6 +56,16 @@ class MyLinkedList:
             print(current.val, end="->")
             current = current.next
         print("None")
+    
+    def removeFromBegining(self):
+        current = self.head
+        if not self.head:
+            print("List is empty")
+            return
+
+    def removeFromEnd(self):
+          
+
 
 ll = MyLinkedList()
 ll.addAtTail(1)

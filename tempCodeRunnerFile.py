@@ -1,1 +1,1 @@
-input()
+print (4%2)
